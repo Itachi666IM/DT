@@ -1,8 +1,6 @@
 const opcua = require('node-opcua')
 // we first install opcua library and access it using an object
 
-const {add_data} = require('../database/write')
-
 const connectionStrategy = {
     initialDelay: 0,
     maxRetry: 2,
@@ -113,11 +111,11 @@ async function main(){
         console.log(datavalue.value.value)
         if(quality==1)
         {
-            add_data('OKAY')
+            console.log('OKAY')
         }
         else
         {
-            add_data('REJECT')
+            console.log('REJECT')
         }
         if(datavalue.value.value==true)
         {
