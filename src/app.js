@@ -9,9 +9,14 @@ const static_path = path.join(__dirname,'../public')
 app.use('/static', express.static(static_path))
 app.set('view engine', 'hbs')
 
-app.get('/',function(req,res){
-    res.render('test')
-})
+//import socket
+const socketio = require('socket.io')
+global.io = socketio(server)
+
+//hmi route
+const hmi = require('./opcua/dcdce')
+app.use('/', test)
+
 
 server.listen(3000,()=>{
     console.log('Listening to port 3000')
