@@ -23,28 +23,28 @@ After setting up your MySQL, remember to change the name of schema and password 
 
 To create the tables just copy the following queries from here and execute them in you MySQL Workbench-
 
-1) ```CREATE TABLE login(
-id int AUTO_INCREMENT PRIMARY KEY,
-nam varchar(255),
-pass varchar(255),
-tim varchar(255)
-); ```
+1) ```CREATE TABLE login(```
+```id int AUTO_INCREMENT PRIMARY KEY,```
+```nam varchar(255),```
+```pass varchar(255),```
+```tim varchar(255)```
+```); ```
 
-2) ```CREATE TABLE machines(
-mname varchar(255) NOT NULL
-); ```
+2) ```CREATE TABLE machines(```
+   ```mname varchar(255) NOT NULL```
+   ```); ```
 
-3) ```CREATE TABLE finalreport(
-id int AUTO_INCREMENT PRIMARY KEY,
-starttime varchar(255),
-endtime varchar(255),
-cycletime float,
-time_stamp varchar(255),
-downtime int,
-number_of_jobs int,
-good_jobs int,
-bad_jobs int
-); ```
+3) ```CREATE TABLE finalreport(```
+```id int AUTO_INCREMENT PRIMARY KEY,```
+```starttime varchar(255),```
+```endtime varchar(255),```
+```cycletime float,```
+```time_stamp varchar(255),```
+```downtime int,```
+```number_of_jobs int,```
+```good_jobs int,```
+```bad_jobs int```
+```); ```
 
 # Conclusion
 After setting up all your tables, you are set to use the tool just use the command "node src/app" in the terminal to run the application.
