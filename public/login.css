@@ -1,0 +1,112 @@
+body{
+    background-color: black;
+    color: white;
+}
+
+.heading{
+    display: flex;
+    font-size: 80px;
+    justify-content: center;
+    margin: 20px;
+}
+
+.container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 700px;
+    height: 400px;
+    background-color: gray;
+    border: 2px solid rgb(0, 255, 47);
+    border-radius: 20px;
+    margin: auto;
+    padding: 10px 10px;
+    margin: auto;
+}
+
+/* display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 30px;
+    margin: auto;
+    padding: 10px 10px;
+    background-color: aliceblue;
+    color: rgb(0, 74, 0);
+    border: 2px solid red;
+    border-radius: 10px;
+    height: 500px;
+    width: 700px; */
+
+.form-group input{
+    display: flex;
+    justify-content: center;
+    border: 2px solid rgb(250, 255, 109);
+    border-radius: 20px;
+    margin: 20px auto;
+    padding: 20px 20px;
+    text-align: center;
+    font-size: 30px;
+    color: rgb(144, 251, 115);
+    background-color: rgb(34, 1, 67);
+    align-items: center;
+}
+
+.form-group input[type="checkbox"]{
+    width: 20px;
+    height: 20px;
+}
+
+.form-group input[type="checkbox"]:hover{
+    cursor: pointer;
+}
+
+.form-group p{
+    display: flex;
+    font-size: 30px;
+    font-weight: 500;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    margin: 20px auto;
+    color: rgb(185, 11, 11);
+}
+
+.btn{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 20px auto;
+    width: 120px;
+    height: 40px;
+    border: 1px solid rgb(120, 11, 11);
+    border-radius: 10px;
+    font-size: 25px;
+    color: rgb(0, 25, 150);
+    background-color: rgb(227, 235, 106);
+    text-decoration: none;
+}
+
+.btn:hover{
+    cursor: pointer;
+    background-color: rgb(118, 224, 162);
+}
+
+#b1 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 20px auto;
+    width: 20%;
+    height: 40px;
+    border: 1px solid rgb(55, 120, 11);
+    border-radius: 10px;
+    font-size: 25px;
+    color: rgb(42, 48, 78);
+    background-color: rgb(234 200 129);
+    text-decoration: none;
+}
+
+#b1:hover{
+    cursor: pointer;
+    background-color: rgb(228, 198, 255);
+}

@@ -1,0 +1,90 @@
+body{
+    background-color: rgb(39, 36, 36);
+    color: aliceblue;
+}
+
+header{
+    display: flex;
+    justify-content: right;
+    align-items: center;
+    font-size: 40px;
+    margin: 20px;
+    padding: 20px 20px;
+}
+
+.box{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 30px;
+    margin: auto;
+    padding: 10px 10px;
+    background-color: aliceblue;
+    color: rgb(0, 74, 0);
+    border: 2px solid red;
+    border-radius: 10px;
+    height: 500px;
+    width: 700px;
+}
+
+.form-group{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid black;
+    background-color: lightgray;
+    color: brown;
+    border-radius: 5px;
+    margin: 30px 30px;
+    padding: 30px 30px;
+    height: 30px;
+    width: 300px;
+}
+
+.content{
+    margin: 30px 30px;
+    font-size: 70px;
+}
+
+#machine{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid black;
+    background-color: lightgray;
+    color: brown;
+    border-radius: 5px;
+    margin: 30px 30px;
+    padding: 30px 30px;
+    height: 30px;
+    width: 300px;
+    font-size: 30px;
+}
+
+.btn{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 20px;
+    background-color: cadetblue;
+    color: purple;
+    border: 1px solid black;
+    border-radius: 5px;
+    margin: 30px 30px;
+    padding: 10px 10px;
+    width: 30%;
+}
+
+.btn:hover{
+    background-color: rgb(148, 199, 201);
+    cursor: pointer;
+}
+
+#log{   
+    text-decoration: none; 
+    background-color: rgb(255, 207, 117);
+}
+
+#log:hover{
+    background-color: rgb(197, 253, 255);
+}

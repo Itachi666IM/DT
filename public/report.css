@@ -1,0 +1,45 @@
+body{
+    background-color: black;
+}
+
+table{
+    border: 1px solid rgb(242, 255, 0);
+    margin: 20px;
+    width: auto;
+}
+
+td , th{
+    border: 2px solid rgb(242, 255, 0);
+    margin: 20px;
+    padding: 20px;
+    text-align: center;
+    color: rgb(255, 255, 255);
+    font-size: 20px;
+}
+
+.th{
+    font-size: 30px;
+    margin-top: 10px;
+    margin-left: 330px;
+
+}
+
+.btn{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 20px;
+    background-color: rgb(236, 189, 107);
+    color: purple;
+    border: 1px solid rgb(255, 0, 0);
+    border-radius: 5px;
+    margin: 30px 30px;
+    padding: 10px 10px;
+    text-decoration: none;
+    width: 10%;
+}
+
+.btn:hover{
+    background-color: rgb(148, 199, 201);
+    cursor: pointer;
+}

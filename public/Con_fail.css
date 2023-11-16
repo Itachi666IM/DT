@@ -1,0 +1,42 @@
+body{
+    background-color: black;
+    color: white;
+}
+
+header{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 60px;
+    margin: 20px 20px;
+    padding: 10px 10px;
+}
+
+.message{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 20px;
+    color: orange;
+    margin: 20px auto;
+}
+
+.btn{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 30px;
+    width: 10%;
+    height: 50px;
+    background-color: rgb(255, 249, 158);
+    color: rgb(3, 60, 74);
+    border: 1px solid rgb(251, 95, 95);
+    border-radius: 20px;
+    margin: auto;
+    text-decoration: none;
+}
+
+.btn:hover{
+    cursor: pointer;
+    background-color: rgb(185, 230, 192);
+}

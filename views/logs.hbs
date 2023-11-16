@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/static/logs.css">
+    <title>Logs</title>
+</head>
+<body>
+    <table>
+        <thead>
+            <tr>
+                <th>S.No</th>
+                <th>Username</th>
+                <th>Timestamp</th>
+            </tr>
+        </thead>
+        <tbody>
+            {{#each login}}
+            <tr>
+                <td>{{this.id}}</td>
+                <td>{{this.nam}}</td>
+                <td>{{this.tim}}</td>
+            </tr>
+            {{/each}}
+        </tbody>
+    </table>
+    <a href="./hmi" class="btn">Back to Device Login</a>
+    <form action="/delete" method="post">
+    <button type="submit" id="clear" class="btn" name="clear">Clear</button>
+    </form>
+</body>
+</html>

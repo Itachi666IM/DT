@@ -1,0 +1,71 @@
+body{
+    background-color: black;
+    color: white;
+}
+nav{
+    position: fixed;
+    background-color: gray;
+    width: 360px;
+}
+
+ul li{
+    list-style: none;
+    display: inline;
+    padding: 10px;
+    font-size: 30px;
+}
+
+ul li a{
+    color: white;
+    text-decoration: none;
+    width: 50px;
+}
+
+ul li a:hover{
+    color: aqua;
+}
+
+.box{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.box img{
+    width: 600px;
+    height: 320px;
+    margin: 20px 20px;
+}
+
+.content{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 10px 10px;
+    font-size: 60px;
+    color: rgb(229, 229, 113);
+}
+
+#cp{
+    display: flex;
+    justify-content: center;
+    color: rgb(251, 145, 145);
+}
+
+.text{
+    font-size: 30px;
+    margin: 20px 20px;
+    color: lightgreen;
+}
+
+ol li{
+    margin: 10px 10px;
+}
+video{
+    width: 600px;
+    height: 380px;
+    display: flex;
+    justify-content: center;
+    margin: 20px auto;
+    border: 1px solid yellowgreen;
+}

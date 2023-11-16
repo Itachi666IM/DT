@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/static/logs.css">
+    <title>Report</title>
+</head>
+<body>
+    <table>
+        <thead>
+            <tr>
+                <th>S.No</th>
+                <th>Starttime</th>
+                <th>Endtime</th>
+                <th>Cycletime(in s)</th>
+                <th>Timestamp</th>
+                <th>Downtime(in s)</th>
+                <th>Number of Jobs</th>
+                <th>Good Jobs</th>
+                <th>Bad Jobs</th>
+            </tr>
+        </thead>
+        <tbody>
+            {{#each finalreport}}
+            <tr>
+                <td>{{this.id}}</td>
+                <td>{{this.starttime}}</td>
+                <td>{{this.endtime}}</td>
+                <td>{{this.cycletime}}</td>
+                <td>{{this.time_stamp}}</td>
+                <td>{{this.downtime}}</td>
+                <td>{{this.number_of_jobs}}</td>
+                <td>{{this.good_jobs}}</td>
+                <td>{{this.bad_jobs}}</td>
+            </tr>
+            {{/each}}
+        </tbody>
+    </table>
+    <a href="./DT_end" class="btn">Back</a>
+</body>
+</html>

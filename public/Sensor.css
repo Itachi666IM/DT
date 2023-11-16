@@ -1,0 +1,39 @@
+body{
+    background-color: black;
+    color: white;
+}
+
+header{
+    font-size: 60px;
+    display: flex;
+    justify-content: center;
+    margin: 20px auto;
+}
+
+.content{
+    margin: 20px auto;
+    color: yellow;
+    font-size: 40px;
+    display: flex;
+    justify-content: center;
+}
+
+.btn{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 30px;
+    width: 140px;
+    height: 50px;
+    color: purple;
+    background-color: cadetblue;
+    padding: 10px 10px;
+    margin: 20px auto;
+    border: 1px solid darkblue;
+    border-radius: 20px;
+}
+
+.btn:hover{
+    cursor: pointer;
+    background-color: rgb(170, 209, 210);
+}

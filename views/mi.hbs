@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/static/mi.css">
+    <title>Machine Information 2</title>
+</head>
+<body>
+    <header>Register {{n}}</header>
+    <div class="container">
+        <div class="box">
+            <div class="content">Enter {{n}} Data</div>
+            <form action="/devinfo" method="post" id="deviceForm">
+                <div class="form-group">
+                    <input type="text" name="metadata" id="metadata" placeholder="Enter MetaData">
+                    <button class="btn" id="s1">Save</button>
+                    <input class="hidden" type="number" id="numComponents" name="numComponents" placeholder="Number of Components">
+                    <button class="btn hidden" id="setComponentCountBtn" type="button">Set Component Count</button>
+                    <!-- Component and sub-component containers -->
+                    <input type="hidden" id="treeData" name="treeData">
+                    <div class="container" id="componentContainer"></div>
+                    <button class="btn" type="submit" id="final">Submit</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+   <script>
+    class Treenode {
+        constructor(name, metadata) {
+            this._name = name;
+            this._metadata = metadata;
+            this._components = [];
+        }
+
+        addChild(component) {
+            this._components.push(component);
+        }
+        set name(newName) {
+            this._name = newName;
+        }
+        set metadata(newMeta) {
+            this._metadata = newMeta;
+        }
+    }
+
+    
+    const metaData = document.getElementById('metadata');
+    const numComponentsInput = document.getElementById('numComponents');
+    const setComponentCountBtn = document.getElementById('setComponentCountBtn');
+    const componentContainer = document.getElementById('componentContainer');
+    const TreeDataInput = document.getElementById('treeData');
+
+    let currentParent = null;
+    let tree = null;
+
+    const rootSave = document.getElementById('s1');
+    rootSave.addEventListener('click', (e) => {
+        e.preventDefault();
+        tree = new Treenode('{{n}}', metaData.value);
+        currentParent = tree;
+        rootSave.classList.add('hidden');
+        alert('Info saved!');
+        const isComp = confirm('Do you want to add more components?');
+        if (isComp) {
+            numComponentsInput.classList.remove('hidden');
+            setComponentCountBtn.classList.remove('hidden');
+        } else {
+            alert('Submit the details to proceed');
+        }
+    });
+
+    setComponentCountBtn.addEventListener('click',async (e) => {
+        e.preventDefault();
+        const numComponents = parseInt(numComponentsInput.value, 10);
+        componentContainer.innerHTML = '';
+        setComponentCountBtn.classList.add('hidden');
+        numComponentsInput.classList.add('hidden');
+        for (let i = 1; i <= numComponents; i++) {
+            await f(componentContainer,currentParent);
+        }
+    });
+
+    async function f(container,parent) {
+        
+        alert(`Enter component of ${parent._name}`);
+        let node = await newNode(container);
+        parent.addChild(node);
+        alert('Component added');  
+    }
+
+    async function newNode(container) {
+        return new Promise((resolve) => {
+            const componentDiv = document.createElement('div');
+            componentDiv.className = 'container';
+
+            const componentName = document.createElement('input');
+            componentName.type = 'text';
+            componentName.name = 'components';
+            componentName.placeholder = 'Enter Component name';
+
+            const metaData = document.createElement('input');
+            metaData.type = 'text';
+            metaData.name = 'componentsMetadata';
+            metaData.placeholder = 'Enter Meta Data';
+
+            const saveButton = document.createElement('button');
+            saveButton.className = 'btn';
+            saveButton.type = 'button';
+            saveButton.innerText = 'Save';
+
+            componentDiv.appendChild(componentName);
+            componentDiv.appendChild(metaData);
+            componentDiv.appendChild(saveButton);
+
+            container.appendChild(componentDiv);
+
+            saveButton.addEventListener('click', () => {
+                saveButton.classList.add('hidden');
+                const node = new Treenode(componentName.value, metaData.value);
+                resolve(node);
+            });
+        });
+    }
+
+    const submitButton = document.getElementById('final');
+    submitButton.addEventListener('click', () => {
+        TreeDataInput.value = JSON.stringify(tree);
+        alert('Hardware Registration completed!');
+    });
+</script>
+
+</body>
+</html>
