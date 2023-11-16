@@ -1,0 +1,38 @@
+body{
+    background-color: black;
+    color: white;
+}
+
+header{
+    font-size: 40px;
+    display: flex;
+    justify-content: center;
+}
+
+.content{
+    font-size: 30px;
+    display: flex;
+    justify-content: center;
+    color: yellow;
+    margin: 20px auto;
+}
+
+.btn{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 20px;
+    background-color: rgb(236, 189, 107);
+    color: purple;
+    border: 1px solid rgb(255, 0, 0);
+    border-radius: 5px;
+    margin: 30px auto;
+    padding: 10px 10px;
+    text-decoration: none;
+    width: 30%;
+}
+
+.btn:hover{
+    background-color: rgb(148, 199, 201);
+    cursor: pointer;
+}

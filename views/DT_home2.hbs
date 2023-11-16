@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/static/DT_home2.css">
+    <script src="/socket.io/socket.io.js"></script>
+    <title>Digital Twin Tool Home2</title>
+</head>
+
+<body>
+    <header>DT</header>
+    <div id="dt"></div>
+    <form action="/end" method="post">
+    <button class="btn">End</button>
+    </form>
+    <script>
+        const dtInfo = document.getElementById('dt');
+        const socket = io();
+        
+        socket.on('connection', () => {
+            console.log("Connected to sockets");
+        })
+
+        fetch('/finalTree')
+            .then((response) => response.json())
+            .then((finalTree) => {
+                console.log("Received Final Tree : ", finalTree);
+
+                // Create an object to store references to your components
+                const components = {};
+
+                for (const node of finalTree) {
+                    const nodeName = node.name;
+                    const componentName = node.nodename;
+                    const nodeId = node.nodeid;
+                    const componentDiv = document.createElement("div");
+                    componentDiv.textContent = nodeName + " : " + componentName;
+                    componentDiv.classList.add('component');
+                    dtInfo.appendChild(componentDiv);
+                    components[nodeId] = componentDiv; // Store the reference
+
+                    // Attach the initial class based on socket data
+                    if (node.sensorData) {
+                        componentDiv.classList.add('on');
+                    } else {
+                        componentDiv.classList.remove('on');
+                    }
+                }
+
+                // Now, you can listen for socket events on the stored components
+                socket.onAny((event, datavalue) => {
+                    // 'event' will be the 'nodeId' and 'datavalue' will contain your data
+                    const componentDiv = components[event];
+                    if (datavalue.sensorData) {
+                        componentDiv.classList.add('on');
+                    } else {
+                        componentDiv.classList.remove('on');
+                    }
+                });
+            });
+    </script>
+</body>
+
+</html>
